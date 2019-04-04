@@ -20,15 +20,81 @@ $carros = new carros($pdo);
     <title>Sistema de reservas</title>
   </head>
   <body>
+    
+    <nav class="navbar navbar-dark bg-dark">
+      <a class="navbar-brand" href="">
+        <img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
+        Home
+      </a>
+    </nav>
+
   	<!-- <div class="container"><br> -->
-      <div class="col-md-3 bg-secondary text-white" style="float: left;">
+      <div class="col-md-3 border-right" style="float: left;">
         
-      
   		<?php 
-    	$lista = $reservas->getReservas();
+
+      if (empty($_GET['mes'])) {
+  
+        }
+        $data = $_GET['ano'].'-'.$_GET['mes'];
+        $dia1 = date('w',strtotime($data));
+        $dias = date('t',strtotime($data));
+        $linhas = ceil(($dia1+$dias) / 7);
+        $dia1 = -$dia1;
+        $data_inicio = date('Y-m-d', strtotime($dia1.' days', strtotime($data)));
+        $data_fim = date('Y-m-d', strtotime(( ($dia1 + ($linhas * 7) - 1) ).' days', strtotime($data)));
+
+
+    	$lista = $reservas->getReservas($data_inicio, $data_fim);
     	$numero = $reservas->getCountReservas();
     	?>
-    	<h4>Reservas = <?php echo $numero; ?> </h4><br>
+      <br>
+    	<h4>Reservas do 
+        <?php   
+      switch ($_GET['mes']) {
+        case '1':
+          echo "Janeiro"; 
+          break;
+        case '2':
+          echo "Fevereiro"; 
+        break;
+        case '3':
+          echo "Março"; 
+        break;
+        case '4':
+          echo "Abril"; 
+        break;
+        case '5':
+          echo "Maio"; 
+        break;
+        case '6':
+          echo 'Junho'; 
+        break;
+        case '7':
+          echo "Julho"; 
+        break;
+        case '8':
+          echo "Agosto"; 
+        break;
+        case '9':
+          echo "Setembro"; 
+        break;
+        case '10':
+          echo "Outubro"; 
+        break;
+        case '11':
+          echo "Novembro"; 
+        break;
+        case '12':
+          echo "Dezembro"; 
+        break;
+
+        default:
+          # code...
+          break;
+      }
+    ?>
+      </h4><br>
 
     		<a class="btn btn-primary" href="reservar.php">Adicionar Reservas</a>
     		<br><br><br>
