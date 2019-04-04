@@ -30,7 +30,7 @@ $carros = new carros($pdo);
     	?>
     	<h1>Numero de reservas = <?php echo $numero; ?></h1>
 
-    		<a class="btn btn-" href="reservar.php">Adicionar Reservas</a>
+    		<a class="btn btn-secondary" href="reservar.php">Adicionar Reservas</a>
     		<br><br><br>
     	<?php
     	
