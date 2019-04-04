@@ -20,17 +20,17 @@ $carros = new carros($pdo);
     <title>Sistema de reservas</title>
   </head>
   <body>
-  	<div class="container"><br>
-      <div class="col-md-4 bg-dark text-white" style="float: left;">
+  	<!-- <div class="container"><br> -->
+      <div class="col-md-3 bg-secondary text-white" style="float: left;">
         
       
   		<?php 
     	$lista = $reservas->getReservas();
     	$numero = $reservas->getCountReservas();
     	?>
-    	<h1>Numero de reservas = <?php echo $numero; ?></h1>
+    	<h4>Reservas = <?php echo $numero; ?> </h4><br>
 
-    		<a class="btn btn-secondary" href="reservar.php">Adicionar Reservas</a>
+    		<a class="btn btn-primary" href="reservar.php">Adicionar Reservas</a>
     		<br><br><br>
     	<?php
     	
@@ -43,13 +43,13 @@ $carros = new carros($pdo);
     	}
     	?>
       </div>
-      <div class="col-md-8 bg-secondary" style="float: right;">
+      <div class="col-md-9" style="float: right;">
         <?php 
         require 'calendario.php';
         ?>
       </div>
   		
-  	</div>
+  	<!-- </div> -->
 
 
 
