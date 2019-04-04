@@ -1,0 +1,17 @@
+create database reservas;
+
+create table carros(
+id Integer auto_increment primary key,
+nome varchar(100)
+);
+
+create table reservas(
+id Integer auto_increment primary key,
+id_carro Integer,
+data_inicio date,
+data_fim date,
+pessoa varchar(100)
+);
+
+
+INSERT INTO `reservas`.`reservas` (`id_carro`, `data_inicio`) VALUES ('3', '2019-04-04');

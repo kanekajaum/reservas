@@ -53,8 +53,8 @@
 </form><br>
 
 
-<center>
-	<p class="bg-dark text-white">
+	<center>
+		<p class="bg-dark text-white">
 		<?php   
 			switch ($_GET['mes']) {
 				case '1':
@@ -122,9 +122,28 @@
 				<tr>
 					<?php for($q = 0; $q < 7; $q++):?>
 					<?php  
-						$w = date('d', strtotime(($q+($l*7)).'days', strtotime($data_inicio)));
+						$t = strtotime(($q+($l*7)).' days', strtotime($data_inicio));
+						$w = date('Y-m-d', strtotime(($q+($l*7)).'days', strtotime($data_inicio)));
 					?>
-					<td><?php echo $w; ?></td>
+					<td>
+						<?php 
+						echo date('d', $t)."<br/><br/>";
+						$w = strtotime($w);
+						foreach ($lista as $item) {
+							$dr_inicio = strtotime($item['data_inicio']);
+							$dr_fim = strtotime($item['data_fim']); 
+							
+
+							if($w >= $dr_inicio && $w <= $dr_fim){
+								echo utf8_encode('<center><p class="alert-primary">'.$item['pessoa'].'(carro: '.$item['id_carro'].')'.'</p></center>');
+							}
+
+
+						}
+							
+						?>
+						
+					</td>
 					<?php endfor;?>
 				</tr>
 			<?php endfor;?>
