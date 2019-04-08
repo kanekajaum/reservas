@@ -29,7 +29,7 @@ $carros = new carros($pdo);
     </nav>
 
   	<!-- <div class="container"><br> -->
-      <div class="col-md-3 border-right" style="float: left;">
+      <div class="col-md-3 " style="float: left;">
         
   		<?php 
 
@@ -105,11 +105,11 @@ $carros = new carros($pdo);
     		$data2 = date('d/m/Y', strtotime($item['data_fim']));
 
 
-    		echo "<p>".utf8_encode($item['pessoa'])." reservou o  carro ".$item['id_carro']." entre ".$data1." a ".$data2."</p><hr>";
+    		echo "<p><strong>".utf8_encode($item['pessoa'])."</strong> reservou o  carro <strong>".$item['id_carro']."</strong> entre ".$data1." a ".$data2."</p><hr>";
     	}
     	?>
       </div>
-      <div class="col-md-9" style="float: right;">
+      <div class="col-md-9 border border-left-1" style="float: right;">
         <?php 
         require 'calendario.php';
         ?>

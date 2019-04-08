@@ -126,6 +126,7 @@
 						$w = date('Y-m-d', strtotime(($q+($l*7)).'days', strtotime($data_inicio)));
 					?>
 					<td>
+						
 						<?php 
 						echo date('d', $t)."<br/><br/>";
 						$w = strtotime($w);
@@ -135,7 +136,7 @@
 							
 
 							if($w >= $dr_inicio && $w <= $dr_fim){
-								echo utf8_encode('<center><p class="alert-primary">'.$item['pessoa'].'(carro: '.$item['id_carro'].')'.'</p></center>');
+								echo utf8_encode('<span class="badge badge-secondary" >'.$item['pessoa'].': (carro: '.$item['id_carro'].')'.'</span>');
 							}
 
 
