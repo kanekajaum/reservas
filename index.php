@@ -14,6 +14,7 @@ $carros = new carros($pdo);
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 
+
     <!-- Bootstrap CSS -->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
 
@@ -23,8 +24,7 @@ $carros = new carros($pdo);
     
     <nav class="navbar navbar-dark bg-dark">
       <a class="navbar-brand" href="">
-        <img src="/docs/4.1/assets/brand/bootstrap-solid.svg" width="30" height="30" class="d-inline-block align-top" alt="">
-        Home
+        <img src="img/home.png" width="30" height="30" class="d-inline-block align-top" alt=""> Home
       </a>
     </nav>
 
@@ -96,7 +96,7 @@ $carros = new carros($pdo);
     ?>
       </h4><br>
 
-    		<a class="btn btn-primary" href="reservar.php">Adicionar Reservas</a>
+    		<a class="btn btn-primary" href="reservar.php"><span><img src="img/plus.png" width="30"></span> Adicionar Reservas </a>
     		<br><br><br>
     	<?php
     	

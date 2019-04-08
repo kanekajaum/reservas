@@ -49,7 +49,7 @@
 		</select>
 	</div>
 	<br>
-	<input class="btn btn-primary form-control" type="submit" value="Consultar">
+	<input class="btn btn-primary form-control" type="submit" value="Consultar" >
 </form><br>
 
 
@@ -126,7 +126,7 @@
 						$w = date('Y-m-d', strtotime(($q+($l*7)).'days', strtotime($data_inicio)));
 					?>
 					<td>
-						
+
 						<?php 
 						echo date('d', $t)."<br/><br/>";
 						$w = strtotime($w);
@@ -136,7 +136,7 @@
 							
 
 							if($w >= $dr_inicio && $w <= $dr_fim){
-								echo utf8_encode('<span class="badge badge-secondary" >'.$item['pessoa'].': (carro: '.$item['id_carro'].')'.'</span>');
+								echo utf8_encode('<div class="badge badge-secondary float-left mr-3"> '.$item['pessoa'].': (carro: '.$item['id_carro'].')'.'</div>');
 							}
 
 
